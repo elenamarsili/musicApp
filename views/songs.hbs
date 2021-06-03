@@ -1,0 +1,17 @@
+<h1>All Songs</h1>
+
+<ul>
+  {{#each songs as |song|}}
+  {{#with song}}
+  <li>
+    {{title}}, {{year}}, {{singer}}
+    <form method="POST" action="/songs/{{id}}/delete">
+      <button type="submit">Delete</button>
+    </form>
+    <a href="/songs/{{id}}/edit">Edit</a>
+  </li>
+  {{/with}}
+  {{/each}}
+</ul>
+
+<a href="/songs/new">New Song</a>
